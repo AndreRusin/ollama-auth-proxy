@@ -1,0 +1,11 @@
+services:
+  ollama-proxy:
+    build: .
+    container_name: ollama-proxy
+    ports:
+      - "3021:3021"
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
